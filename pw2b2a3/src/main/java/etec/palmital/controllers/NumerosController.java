@@ -8,6 +8,9 @@ import org.springframework.ui.Model;
 @Controller
 public class NumerosController {
     @value("${aluno}")
+    private String nome;
+
+    @RequestMapping("/")
     private String calc(Model model) {
         int[] resultado = null;
         for(int val = 2 ; val < 30 ; val++) {
