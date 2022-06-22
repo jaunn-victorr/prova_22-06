@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 
 @Controller
 public class NumerosController {
-    @value("${aluno}")
+    @Value("${aluno}")
     private String nome;
 
     @RequestMapping("/")
@@ -19,8 +19,8 @@ public class NumerosController {
                     resultado = new int [1];
                 } else {
                     int[] temp = resultado;
-                    reseultado = new int[temp.length + 1];
-                    for(int pos = 0:pos < temp.length;pos++)
+                    resultado = new int[temp.length + 1];
+                    for(int pos = 0;pos < temp.length;pos++)
                         resultado[pos] = temp[pos];
                 }
                 resultado [resultado.length - 1] = val;
@@ -28,6 +28,6 @@ public class NumerosController {
         }
         model.addAtribute("valores", resultado)
         model.addAtribute("aluno", nome);
-        return "/numeros/sequencia"
+        return "/numeros/sequencia";
     }
 }
